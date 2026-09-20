@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A站春晚官方回顾与精彩集锦。汇集历年Acfun春晚搞笑短剧、原创音乐、动画及互动直播内容，提供高清视频下载、幕后花絮及年度最佳作品评选。">
+    <meta name="keywords" content="acfun春晚, ACG春晚, acg春晚, acfun年番, acfun春晚回顾, acfun春晚直播, acfun春晚视频">
+    <title>A站春晚-精彩回顾与年度盛典</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff5e5e;
+            --primary-hover: #ff3b3b;
+            --secondary-color: #2c3e50;
+            --bg-color: #f5f6f7;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #888888;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-unit);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e0e0e0;
+            margin-left: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle at 20% 80%, rgba(255, 94, 94, 0.2) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 24px;
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .stat-item span {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Video Grid */
+        .section {
+            padding: 40px 0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 1px solid #eee;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-thumb {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #eee;
+        }
+
+        .card-thumb img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .video-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+
+        .card-info {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-sub);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Categories */
+        .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .category-tag {
+            padding: 6px 16px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-main);
+            transition: all 0.2s;
+        }
+
+        .category-tag:hover, .category-tag.active {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: #fff5f5;
+        }
+
+        /* Features */
+        .features {
+            background-color: white;
+            padding: 60px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 24px;
+            border-radius: var(--border-radius);
+            background: var(--bg-color);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .feature-item h4 {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 16px;
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: white;
+        }
+
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-sub);
+            font-size: 15px;
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 16px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .icon-plus {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #ccc;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 12px 0;
+            }
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 12px;
+                overflow-x: auto;
+                padding-bottom: 8px;
+            }
+            nav ul {
+                gap: 16px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">acfun春晚</a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">历年回顾</a></li>
+                    <li><a href="#">明星嘉宾</a></li>
+                    <li><a href="#">幕后花絮</a></li>
+                    <li><a href="#">周边商城</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">投稿</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>汇聚二次元狂欢，致敬每一个热爱</h1>
+                <p>A站春晚是ACG（动画、漫画、游戏）领域的年度盛典。这里有最前卫的原创动画、最爆笑的情景短剧、最动感的音乐现场。</p>
+                <div class="hero-btns">
+                    <a href="#videos" class="btn btn-primary" style="padding: 12px 32px; font-size: 16px;">观看精彩回放</a>
+                    <a href="#vote" class="btn btn-outline" style="padding: 12px 32px; font-size: 16px;">参与年度评选</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>12</h3>
+                        <span>年届盛典</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <span>原创作品</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3>2亿+</h3>
+                        <span>累计播放</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Showcase -->
+        <section id="videos" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <span>年度精选视频</span>
+                    <a href="#" style="font-size: 14px; color: var(--text-sub);">查看全部 &rarr;</a>
+                </div>
+                
+                <div class="category-list" style="margin-bottom: 24px;">
+                    <a href="#" class="category-tag active">全部</a>
+                    <a href="#" class="category-tag">动画短片</a>
+                    <a href="#" class="category-tag">情景喜剧</a>
+                    <a href="#" class="category-tag">原创音乐</a>
+                    <a href="#" class="category-tag">跨界表演</a>
+                </div>
+
+                <div class="video-grid">
+                    <!-- Video 1 -->
+                    <article class="video-card">
+                        <div class="card-thumb">
+                            <img src="https://picsum.photos/seed/acfun1/400/225" alt="2023 A站春晚精彩瞬间">
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">2023 A站春晚：二次元大乱斗</h3>
+                            <div class="card-meta">
+                                <span>2023-01-22</span>
+                                <span>播放 1.2M</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video 2 -->
+                    <article class="video-card">
+                        <div class="card-thumb">
+                            <img src="https://picsum.photos/seed/acfun2/400/225" alt="原创动画《那年那兔那些事儿》">
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">原创动画：穿越时空的邀请函</h3>
+                            <div class="card-meta">
+                                <span>2022-01-20</span>
+                                <span>播放 890K</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video 3 -->
+                    <article class="video-card">
+                        <div class="card-thumb">
+                            <img src="https://picsum.photos/seed/acfun3/400/225" alt="明星嘉宾表演">
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">明星嘉宾跨界表演：当二次元遇上现实</h3>
+                            <div class="card-meta">
+                                <span>2021-02-10</span>
+                                <span>播放 2.5M</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video 4 -->
+                    <article class="video-card">
+                        <div class="card-thumb">
+                            <img src="https://picsum.photos/seed/acfun4/400/225" alt="幕后花絮">
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">春晚幕后花絮：导演组的“渡劫”日常</h3>
+                            <div class="card-meta">
+                                <span>2020-01-24</span>
+                                <span>播放 450K</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">🎬</span>
+                        <h4>高清画质</h4>
+                        <p>支持4K超清播放，还原每一个表情细节</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎧</span>
+                        <h4>沉浸音效</h4>
+                        <p>杜比全景声支持，享受现场级听觉盛宴</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">💬</span>
+                        <h4>弹幕互动</h4>
+                        <p>实时弹幕同步，与亿万网友一起狂欢</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📱</span>
+                        <h4>多端同步</h4>
+                        <p>手机、平板、电视一键投屏，随时随地观看</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Columns -->
+        <section class="section">
+            <div class="container" style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+                <div>
+                    <div class="section-title">深度回顾</div>
+                    <article style="margin-bottom: 24px;">
+                        <h3 style="font-size: 18px; margin-bottom: 8px;"><a href="#">从草根到主流：A站春晚十年的进化史</a></h3>
+                        <p style="color: var(--text-sub); font-size: 14px;">回顾A站春晚从最初的BBS视频贴，发展到现在拥有专业团队制作、明星嘉宾参与的综合性晚会...</p>
+                    </article>
+                    <article style="margin-bottom: 24px;">
+                        <h3 style="font-size: 18px; margin-bottom: 8px;"><a href="#">技术革新：直播与点播技术的完美结合</a></h3>
+                        <p style="color: var(--text-sub); font-size: 14px;">解析A站在春晚直播中应用的新技术，如何保证千万级并发下的低延迟与高稳定性...</p>
+                    </article>
+                    <a href="#" class="btn btn-outline">阅读更多文章</a>
+                </div>
+                
+                <aside>
+                    <div class="section-title">热门榜单</div>
+                    <ul style="background: white; padding: 20px; border-radius: var(--border-radius); border: 1px solid #eee;">
+                        <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f5f5f5;">
+                            <span>1. 2023 舞台剧《梦想起航》</span>
+                            <span style="color: #ff5e5e;">🔥</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f5f5f5;">
+                            <span>2. 原创歌曲《ACG之歌》Remix</span>
+                            <span>2</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f5f5f5;">
+                            <span>3. 搞笑短剧《甲方乙方》</span>
+                            <span>3</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f5f5f5;">
+                            <span>4. 舞蹈表演《初音未来》</span>
+                            <span>4</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; padding: 12px 0;">
+                            <span>5. 跨界小品《程序员的一天》</span>
+                            <span>5</span>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="vote" class="section" style="background-color: #fafafa;">
+            <div class="container">
+                <div class="section-title">常见问题与投票指南</div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>在哪里可以观看往届A站春晚直播回放？</span>
+                            <span class="icon-plus">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            您可以通过本页面顶部的“年度精选视频”板块，或者访问A站官方频道查找历年春晚的完整录像。部分精彩片段也会在各大短视频平台发布。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>如何参与明年的A站春晚投稿？</span>
+                            <span class="icon-plus">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            我们会在每年的年底发布具体的投稿规则和征集令。请关注A站官方公告，准备好您的原创动画、剧本或音乐作品，按照要求上传至A站投稿系统。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>A站春晚是否有线下活动？</span>
+                            <span class="icon-plus">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            A站偶尔会举办线下粉丝见面会或主题展览，但核心的大型晚会通常以线上直播形式呈现。请留意A站官方微博获取最新活动信息。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>acfun春晚</h2>
+                    <p style="font-size: 14px; line-height: 1.8; opacity: 0.8;">
+                        ACG文化的发源地之一，致力于为用户提供最纯粹、最有趣的二次元内容体验。在这里，每一个创意都有被看见的机会。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>内容中心</h4>
+                    <ul>
+                        <li><a href="#">动画区</a></li>
+                        <li><a href="#">番剧区</a></li>
+                        <li><a href="#">音乐区</a></li>
+                        <li><a href="#">舞蹈区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">Bilibili</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 A站春晚内容回顾页. All Rights Reserved. 本页面为展示型静态页面，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Simple Category Filter Interaction (Visual only)
+            const tags = document.querySelectorAll('.category-tag');
+            tags.forEach(tag => {
+                tag.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    tags.forEach(t => t.classList.remove('active'));
+                    tag.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
