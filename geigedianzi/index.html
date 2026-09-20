@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子邮件-免费邮箱注册与安全使用指南</title>
+    <meta name="description" content="本站提供全面的电子邮件服务指南，包括免费邮箱注册教程、邮箱安全设置、邮件客户端配置及常见问题解答，助您高效管理在线通信。">
+    <meta name="keywords" content="电子邮件,免费邮箱,邮箱注册,邮箱安全,Outlook邮箱,QQ邮箱,网易邮箱">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --primary-hover: #004494;
+            --secondary-color: #6c757d;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-light: #6c757d;
+            --border-color: #dee2e6;
+            --success-color: #28a745;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: #e3f2fd;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 48px;
+        }
+
+        .section-header {
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Cards Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #e3f2fd;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .card-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .card-link {
+            margin-top: auto;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-box {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-list {
+            list-style: none;
+        }
+
+        .faq-item {
+            margin-bottom: 16px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Email List Style */
+        .email-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .email-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .email-name {
+            font-weight: 500;
+        }
+
+        .email-provider {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            background: #f1f3f5;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: #c2c7d0;
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: #c2c7d0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #495057;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 16px;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                邮件通
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#register">注册指南</a></li>
+                    <li><a href="#providers">邮箱选择</a></li>
+                    <li><a href="#security">安全设置</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>电子邮件：连接世界的数字名片</h1>
+            <p>无论是商务沟通、账户注册还是日常联系，一个可靠的电子邮件地址都是必不可少的工具。本站为您提供全面的邮箱注册教程、主流服务商对比及安全使用建议。</p>
+            <div class="cta-group">
+                <a href="#register" class="btn btn-primary">查看注册教程</a>
+                <a href="#providers" class="btn btn-outline">选择邮箱服务商</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <!-- Main Content -->
+        <main>
+            <!-- Registration Steps -->
+            <section id="register">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        免费邮箱注册流程
+                    </h2>
+                </div>
+                <div class="card-grid">
+                    <article class="card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>选择服务商</h3>
+                        <p>根据您的需求选择合适的邮箱服务商。国内用户推荐QQ邮箱或163邮箱，国际用户可考虑Gmail或Outlook，它们功能强大且安全性高。</p>
+                        <a href="#providers" class="card-link">查看推荐 &rarr;</a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                        </div>
+                        <h3>填写资料</h3>
+                        <p>在注册页面输入用户名、密码、手机号进行验证。请注意设置包含大小写字母和数字的强密码，并准备好手机以接收验证码。</p>
+                        <a href="#" class="card-link">设置强密码 &rarr;</a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <h3>完成验证</h3>
+                        <p>按照提示完成手机或邮箱验证，设置密保问题。验证通过后，您即可登录邮箱，开始收发邮件。</p>
+                        <a href="#" class="card-link">开始使用 &rarr;</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Popular Providers -->
+            <section id="providers">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        主流邮箱服务商推荐
+                    </h2>
+                </div>
+                <div class="card-grid">
+                    <article class="card">
+                        <h3>QQ邮箱</h3>
+                        <p>国内使用最广泛的邮箱之一，绑定QQ号，方便管理社交与商务通信，支持大附件。</p>
+                        <span class="email-provider">国内首选</span>
+                    </article>
+                    <article class="card">
+                        <h3>163网易邮箱</h3>
+                        <p>老牌邮箱服务商，界面简洁，反垃圾邮件能力强，适合商务人士长期使用。</p>
+                        <span class="email-provider">商务推荐</span>
+                    </article>
+                    <article class="card">
+                        <h3>Gmail</h3>
+                        <p>谷歌提供的免费邮箱，搜索功能强大，与Google Drive等云服务无缝集成。</p>
+                        <span class="email-provider">国际通用</span>
+                    </article>
+                    <article class="card">
+                        <h3>Outlook</h3>
+                        <p>微软出品，整合了日历和联系人管理，与Windows系统兼容性极佳。</p>
+                        <span class="email-provider">办公集成</span>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Security Tips -->
+            <section id="security">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        邮箱安全设置指南
+                    </h2>
+                </div>
+                <div style="background: white; padding: 24px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: var(--success-color); font-weight: bold;">1.</span>
+                            <div>
+                                <strong>开启双重验证（2FA）</strong>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">在账户安全设置中开启手机验证码或验证器应用，即使密码泄露他人也难以登录。</p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: var(--success-color); font-weight: bold;">2.</span>
+                            <div>
+                                <strong>警惕钓鱼邮件</strong>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">不要点击不明链接或下载附件，对于要求输入密码的邮件务必通过官方渠道核实。</p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: var(--success-color); font-weight: bold;">3.</span>
+                            <div>
+                                <strong>定期清理垃圾箱</strong>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">定期清理已删除邮件，释放存储空间，并防止敏感信息残留。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-box">
+                <h4 class="sidebar-title">常见问题 (FAQ)</h4>
+                <ul class="faq-list">
+                    <li class="faq-item">
+                        <div class="faq-question">如何找回忘记的邮箱密码？</div>
+                        <div class="faq-answer">通常可以通过注册时绑定的手机号或备用邮箱进行验证重置。</div>
+                    </li>
+                    <li class="faq-item">
+                        <div class="faq-question">一个手机号可以注册几个邮箱？</div>
+                        <div class="faq-answer">大多数服务商限制同一手机号只能注册一个免费主账号，但可注册多个别名。</div>
+                    </li>
+                    <li class="faq-item">
+                        <div class="faq-question">如何设置邮件签名？</div>
+                        <div class="faq-answer">在邮箱设置菜单的“签名”选项中，编辑您希望在每封邮件末尾显示的文字。</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-box">
+                <h4 class="sidebar-title">快速导航</h4>
+                <ul class="faq-list">
+                    <li class="faq-item"><a href="#" style="color: var(--primary-color); text-decoration: none;">注册新邮箱 &rarr;</a></li>
+                    <li class="faq-item"><a href="#" style="color: var(--primary-color); text-decoration: none;">POP3/IMAP设置 &rarr;</a></li>
+                    <li class="faq-item"><a href="#" style="color: var(--primary-color); text-decoration: none;">邮件客户端下载 &rarr;</a></li>
+                    <li class="faq-item"><a href="#" style="color: var(--primary-color); text-decoration: none;">企业邮箱服务 &rarr;</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于邮件通</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">我们致力于提供最实用的电子邮件使用指南和资讯服务，帮助用户更好地利用数字通讯工具。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">注册教程</a></li>
+                    <li><a href="#">服务商对比</a></li>
+                    <li><a href="#">安全中心</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>法律信息</h4>
+                <ul>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">服务条款</a></li>
+                    <li><a href="#">Cookie设置</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 邮件通服务指南. 保留所有权利.
+        </div>
+    </footer>
+
+</body>
+</html>
