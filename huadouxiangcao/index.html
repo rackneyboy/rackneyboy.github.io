@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="花都香草世界官方网站，为您提供香草种植技术、花卉观赏指南、生态旅游攻略及亲子游体验介绍。探索芳香植物的世界，享受自然美景与休闲时光。">
+    <meta name="keywords" content="花都香草世界, 香草种植, 花卉观赏, 亲子游, 生态旅游, 广州周边游">
+    <title>花都香草世界-芳香植物生态园与休闲旅游指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #8BC34A;
+            --accent-color: #FF9800;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #F9F9F9;
+            --white: #FFFFFF;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #e68900;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/seed/herbgarden/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--text-dark);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Quick Nav */
+        .quick-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .nav-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        /* Attractions Section */
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: var(--primary-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Plant Guide */
+        .plant-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .plant-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .plant-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .plant-name {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .plant-benefit {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Tickets & Info */
+        .info-section {
+            background-color: var(--white);
+        }
+
+        .info-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .ticket-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .ticket-table th, .ticket-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ticket-table th {
+            background-color: #f5f5f5;
+            color: var(--text-dark);
+        }
+
+        .price-highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .contact-box {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+        }
+
+        .contact-box h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #b0bec5;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #37474f;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .nav-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .about-grid, .info-container, .plant-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .header-inner {
+                justify-content: center;
+            }
+
+            .ticket-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+            <span>花都香草世界</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#about">园区简介</a></li>
+                <li><a href="#attractions">景点推荐</a></li>
+                <li><a href="#plants">香草百科</a></li>
+                <li><a href="#guide">游玩指南</a></li>
+            </ul>
+        </nav>
+        <a href="#tickets" class="cta-btn">立即购票</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-content">
+        <h1>探索芳香植物的世界</h1>
+        <p>位于广州花都的生态农业园，集种植、观光、科普、休闲于一体。体验田园风光，亲近自然。</p>
+        <div class="hero-buttons">
+            <a href="#guide" class="btn btn-primary">预约参观</a>
+            <a href="#about" class="btn btn-secondary">了解更多</a>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="quick-nav">
+        <div class="nav-card">
+            <h3>亲子游</h3>
+            <p>适合家庭游玩的互动项目与自然课堂</p>
+        </div>
+        <div class="nav-card">
+            <h3>摄影基地</h3>
+            <p>四季变换的绝美花海与景观</p>
+        </div>
+        <div class="nav-card">
+            <h3>科普教育</h3>
+            <p>香草种植技术展示与植物认知</p>
+        </div>
+        <div class="nav-card">
+            <h3>休闲采摘</h3>
+            <p>体验亲手采摘的乐趣与收获</p>
+        </div>
+    </div>
+</div>
+
+<section id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>生态农业的典范</h2>
+                <h3>花都香草世界简介</h3>
+                <p>花都香草世界是一个以种植各种香草植物为主的生态农业观光园。园区内拥有大面积的香草种植基地，汇聚了薰衣草、马鞭草、迷迭香、薄荷等上百种芳香植物。</p>
+                <p>这里不仅是植物爱好者的天堂，也是都市人逃离喧嚣、回归自然的理想去处。园区致力于推广生态农业理念，通过展示香草的种植与利用，向游客普及植物知识。</p>
+                <p>无论是春天的花海烂漫，还是夏日的绿意盎然，亦或是秋冬的静谧安宁，花都香草世界都有独特的风景等待着您的探索。</p>
+            </div>
+            <div class="about-image">
+                <img src="https://picsum.photos/seed/flowerfield/600/400" alt="花都香草世界全景图">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="attractions">
+    <div class="container">
+        <div class="section-header">
+            <h2>热门景点推荐</h2>
+            <p>园区内精心设计的景观区域，带您领略不同的植物风情</p>
+        </div>
+        <div class="attractions-grid">
+            <article class="card">
+                <img src="https://picsum.photos/seed/lavender/400/300" alt="薰衣草花海" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">浪漫主题</span>
+                    <h3 class="card-title">紫色花海</h3>
+                    <p class="card-desc">大面积种植的薰衣草与马鞭草，在微风中摇曳，营造梦幻般的紫色调空间，是拍照打卡的绝佳地点。</p>
+                </div>
+            </article>
+            <article class="card">
+                <img src="https://picsum.photos/seed/herbgarden2/400/300" alt="芳香植物区" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">科普教育</span>
+                    <h3 class="card-title">芳香植物科普区</h3>
+                    <p class="card-desc">展示各种香草植物的生长习性，游客可近距离观察植物形态，了解其药用与食用价值。</p>
+                </div>
+            </article>
+            <article class="card">
+                <img src="https://picsum.photos/seed/woodenbridge/400/300" alt="林间栈道" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">休闲漫步</span>
+                    <h3 class="card-title">林间栈道</h3>
+                    <p class="card-desc">蜿蜒穿梭于花丛与林木之间，清新的空气与鸟鸣声伴随您的每一步，享受宁静的田园时光。</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="plants">
+    <div class="container">
+        <div class="section-header">
+            <h2>常见香草百科</h2>
+            <p>认识园区内种植的明星香草植物</p>
+        </div>
+        <div class="plant-grid">
+            <div class="plant-item">
+                <span class="plant-icon">💜</span>
+                <span class="plant-name">薰衣草</span>
+                <span class="plant-benefit">安神助眠，制作精油</span>
+            </div>
+            <div class="plant-item">
+                <span class="plant-icon">🌿</span>
+                <span class="plant-name">迷迭香</span>
+                <span class="plant-benefit">提神醒脑，烹饪香料</span>
+            </div>
+            <div class="plant-item">
+                <span class="plant-icon">🍃</span>
+                <span class="plant-name">薄荷</span>
+                <span class="plant-benefit">清凉解暑，驱蚊止痒</span>
+            </div>
+            <div class="plant-item">
+                <span class="plant-icon">🌻</span>
+                <span class="plant-name">万寿菊</span>
+                <span class="plant-benefit">观赏性强，驱虫作用</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="guide" class="info-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>游玩指南</h2>
+            <p>为您的游览提供实用的参考信息</p>
+        </div>
+        <div class="info-container">
+            <div class="guide-content">
+                <h3>游览贴士</h3>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; color: var(--text-light);">
+                    <li style="margin-bottom: 0.8rem;"><strong>最佳季节：</strong>每年4月至10月是园区花卉盛开期，5-6月薰衣草最为茂盛。</li>
+                    <li style="margin-bottom: 0.8rem;"><strong>交通方式：</strong>建议自驾前往，导航至“花都香草世界”，园区设有免费停车场。</li>
+                    <li style="margin-bottom: 0.8rem;"><strong>餐饮服务：</strong>园区内设有休息区，可品尝简单的香草茶点及农家菜。</li>
+                    <li style="margin-bottom: 0.8rem;"><strong>注意事项：</strong>请爱护花草，勿随意采摘；建议穿着舒适的鞋子以便步行游览。</li>
+                </ul>
+            </div>
+            <aside id="tickets">
+                <div class="contact-box">
+                    <h3>门票价格</h3>
+                    <table class="ticket-table">
+                        <tr>
+                            <th>成人票</th>
+                            <td class="price-highlight">¥60.00</td>
+                        </tr>
+                        <tr>
+                            <th>儿童票 (1.2m以下)</th>
+                            <td>免费</td>
+                        </tr>
+                        <tr>
+                            <th>儿童票 (1.2m-1.5m)</th>
+                            <td>¥30.00</td>
+                        </tr>
+                        <tr>
+                            <th>老人票 (60岁以上)</th>
+                            <td>¥30.00</td>
+                        </tr>
+                        <tr>
+                            <th>学生票</th>
+                            <td>¥30.00</td>
+                        </tr>
+                    </table>
+                    <a href="#" class="btn btn-secondary" style="display:block; text-align:center; margin-top:1.5rem; color:var(--text-dark);">在线预订</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于园区</h4>
+                <p>花都香草世界致力于打造广州北部的生态休闲名片，推广香草文化与现代农业技术。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#about">园区简介</a></li>
+                    <li><a href="#attractions">景点介绍</a></li>
+                    <li><a href="#guide">游玩攻略</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>电话：020-12345678</li>
+                    <li>地址：广州市花都区XX路XX号</li>
+                    <li>邮箱：info@example.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 花都香草世界 版权所有 | 仅供演示</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
